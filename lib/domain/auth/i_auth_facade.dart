@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:todo_firebase_ddd/domain/auth/auth_failure.dart';
 
+import 'auth_failure.dart';
 import 'value_objects.dart';
 
 abstract class IAuthFacade {
