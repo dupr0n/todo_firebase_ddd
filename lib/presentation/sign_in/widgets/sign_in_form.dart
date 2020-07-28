@@ -45,7 +45,7 @@ class SignInForm extends StatelessWidget {
                 autocorrect: false,
                 obscureText: true,
                 onChanged: (value) => signInbloc.add(SignInFormEvent.passwordChanged(value)),
-                validator: (_) => signInbloc.state.emailAddress.value.fold(
+                validator: (_) => signInbloc.state.password.value.fold(
                   (f) => f.maybeMap(
                     shortPassword: (_) => 'Short Password',
                     orElse: () => null,
