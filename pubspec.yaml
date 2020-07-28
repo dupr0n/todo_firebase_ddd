@@ -20,6 +20,7 @@ dependencies:
   get_it: ^4.0.4
   injectable: ^1.0.2
   flushbar: ^1.10.4
+  uuid: ^2.2.0
 
   cupertino_icons: ^0.1.3
 
