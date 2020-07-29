@@ -10,6 +10,10 @@ abstract class ValueObject<T> {
   const ValueObject();
   Either<ValueFailure<T>, T> get value;
 
+  //* To convert some T type to dynamic
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit =>
+      value.fold((l) => left(l), (r) => right(unit));
+
   bool isValid() => value.isRight();
 
   /// Throws [UnexpectedValueError] containing the [ValueError]
