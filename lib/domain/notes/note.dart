@@ -11,7 +11,7 @@ part 'note.freezed.dart';
 
 @freezed
 abstract class Note implements _$Note {
-  Note._();
+  const Note._();
 
   const factory Note({
     @required UniqueId id,
