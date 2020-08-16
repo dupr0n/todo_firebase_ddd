@@ -32,10 +32,10 @@ class CriticalFailureWidget extends StatelessWidget {
             onPressed: () {},
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: const <Widget>[
                 Icon(Icons.mail),
-                const SizedBox(width: 4),
-                const Text('Get help'),
+                SizedBox(width: 4),
+                Text('Get help'),
               ],
             ),
           )

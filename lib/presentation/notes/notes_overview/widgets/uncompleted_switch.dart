@@ -26,13 +26,13 @@ class UncompletedSwitch extends HookWidget {
             child: child,
           ),
           child: toggleState.value
-              ? Icon(
+              ? const Icon(
                   Icons.check_box_outline_blank,
-                  key: const Key('Outline'),
+                  key: Key('Outline'),
                 )
-              : Icon(
+              : const Icon(
                   Icons.indeterminate_check_box,
-                  key: const Key('Indeterminate'),
+                  key: Key('Indeterminate'),
                 ),
         ),
       ),
