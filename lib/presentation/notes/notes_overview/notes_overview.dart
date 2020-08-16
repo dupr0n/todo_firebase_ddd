@@ -55,7 +55,7 @@ class NotesOverviewPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Notes'),
             leading: IconButton(
-              icon: Icon(Icons.exit_to_app),
+              icon: const Icon(Icons.exit_to_app),
               onPressed: () {
                 context.bloc<AuthBloc>().add(const AuthEvent.signedOut());
               },
@@ -64,10 +64,8 @@ class NotesOverviewPage extends StatelessWidget {
           ),
           body: NotesOverviewBodyWidget(),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              // TODO: Navigate to NoteFormPage
-            },
-            child: Icon(Icons.add),
+            onPressed: () => ExtendedNavigator.of(context).pushNoteFormPage(),
+            child: const Icon(Icons.add),
           ),
         ),
       ),
