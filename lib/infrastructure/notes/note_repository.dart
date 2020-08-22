@@ -80,8 +80,8 @@ class NoteRepository implements INoteRepository {
   Future<Either<NoteFailure, Unit>> delete(Note note) async {
     try {
       final userDoc = await _firestore.userDocument();
-      final noteDTO = NoteDTO.fromDomain(note);
-      await userDoc.noteCollection.document(noteDTO.id).updateData(noteDTO.toJson());
+      final noteId = note.id.getOrCrash();
+      await userDoc.noteCollection.document(noteId).delete();
       return right(unit);
     } on PlatformException catch (e) {
       if (e.message.contains('PERMISSION_DENIED')) {
@@ -98,8 +98,8 @@ class NoteRepository implements INoteRepository {
   Future<Either<NoteFailure, Unit>> update(Note note) async {
     try {
       final userDoc = await _firestore.userDocument();
-      final noteId = note.id.getOrCrash();
-      await userDoc.noteCollection.document(noteId).delete();
+      final noteDTO = NoteDTO.fromDomain(note);
+      await userDoc.noteCollection.document(noteDTO.id).updateData(noteDTO.toJson());
       return right(unit);
     } on PlatformException catch (e) {
       if (e.message.contains('PERMISSION_DENIED')) {
