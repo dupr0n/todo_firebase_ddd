@@ -4,11 +4,11 @@ import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/core/errors.dart';
 import '../../injection.dart';
 
-extension FirestoreX on Firestore {
+extension FirestoreX on FirebaseFirestore {
   Future<DocumentReference> userDocument() async {
     final userOption = await getIt<IAuthFacade>().getSignedInUser();
     final user = userOption.getOrElse(() => throw NotAuthenticatedError());
-    return Firestore.instance.collection('users').document(user.id.getOrCrash());
+    return FirebaseFirestore.instance.collection('users').doc(user.id.getOrCrash());
   }
 }
 

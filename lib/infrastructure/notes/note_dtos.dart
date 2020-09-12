@@ -35,7 +35,7 @@ abstract class NoteDTO implements _$NoteDTO {
   factory NoteDTO.fromJson(Map<String, dynamic> json) => _$NoteDTOFromJson(json);
 
   factory NoteDTO.fromFirestore(DocumentSnapshot doc) =>
-      NoteDTO.fromJson(doc.data).copyWith(id: doc.documentID);
+      NoteDTO.fromJson(doc.data()).copyWith(id: doc.id);
 
   Note toDomain() => Note(
         id: UniqueId.fromUniqueString(id),

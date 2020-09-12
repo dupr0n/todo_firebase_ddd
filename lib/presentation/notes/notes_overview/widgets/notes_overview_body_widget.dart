@@ -15,6 +15,7 @@ class NotesOverviewBodyWidget extends StatelessWidget {
         loadInProgress: (_) => const Center(child: CircularProgressIndicator()),
         loadSuccess: (state) {
           return ListView.builder(
+            physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
               final note = state.notes[index];
               if (note.failureOption.isSome()) {
