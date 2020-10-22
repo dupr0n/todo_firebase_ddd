@@ -14,7 +14,7 @@ class SignInForm extends StatelessWidget {
       builder: (context, state) {
         final signInbloc = context.bloc<SignInFormBloc>();
         return Form(
-          autovalidate: state.showErrorMessages,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             padding: const EdgeInsets.all(8),
             children: <Widget>[

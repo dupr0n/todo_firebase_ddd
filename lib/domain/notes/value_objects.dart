@@ -53,8 +53,10 @@ class NoteColor extends ValueObject<Color> {
     Color(0xfffa8072), // salmon
     Color(0xfffedc56), // mustard
     Color(0xffd0f0c0), // tea
+    Color(0xff2196f3), // sea
     Color(0xfffca3b7), // flamingo
     Color(0xff997950), // tortilla
+    Color(0xff9c27b0), // jello
     Color(0xfffffdd0), // cream
   ];
 

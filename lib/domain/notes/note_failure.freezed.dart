@@ -9,6 +9,7 @@ part of 'note_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$NoteFailureTearOff {
   const _$NoteFailureTearOff();
 
@@ -28,9 +29,11 @@ class _$NoteFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $NoteFailure = _$NoteFailureTearOff();
 
+/// @nodoc
 mixin _$NoteFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -60,12 +63,14 @@ mixin _$NoteFailure {
   });
 }
 
+/// @nodoc
 abstract class $NoteFailureCopyWith<$Res> {
   factory $NoteFailureCopyWith(
           NoteFailure value, $Res Function(NoteFailure) then) =
       _$NoteFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$NoteFailureCopyWithImpl<$Res> implements $NoteFailureCopyWith<$Res> {
   _$NoteFailureCopyWithImpl(this._value, this._then);
 
@@ -74,12 +79,14 @@ class _$NoteFailureCopyWithImpl<$Res> implements $NoteFailureCopyWith<$Res> {
   final $Res Function(NoteFailure) _then;
 }
 
+/// @nodoc
 abstract class $UnexpectedCopyWith<$Res> {
   factory $UnexpectedCopyWith(
           Unexpected value, $Res Function(Unexpected) then) =
       _$UnexpectedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UnexpectedCopyWithImpl<$Res> extends _$NoteFailureCopyWithImpl<$Res>
     implements $UnexpectedCopyWith<$Res> {
   _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
@@ -89,6 +96,7 @@ class _$UnexpectedCopyWithImpl<$Res> extends _$NoteFailureCopyWithImpl<$Res>
   Unexpected get _value => super._value as Unexpected;
 }
 
+/// @nodoc
 class _$Unexpected implements Unexpected {
   const _$Unexpected();
 
@@ -166,12 +174,14 @@ abstract class Unexpected implements NoteFailure {
   const factory Unexpected() = _$Unexpected;
 }
 
+/// @nodoc
 abstract class _$InsufficientPermissionCopyWith<$Res> {
   factory _$InsufficientPermissionCopyWith(_InsufficientPermission value,
           $Res Function(_InsufficientPermission) then) =
       __$InsufficientPermissionCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InsufficientPermissionCopyWithImpl<$Res>
     extends _$NoteFailureCopyWithImpl<$Res>
     implements _$InsufficientPermissionCopyWith<$Res> {
@@ -183,6 +193,7 @@ class __$InsufficientPermissionCopyWithImpl<$Res>
   _InsufficientPermission get _value => super._value as _InsufficientPermission;
 }
 
+/// @nodoc
 class _$_InsufficientPermission implements _InsufficientPermission {
   const _$_InsufficientPermission();
 
@@ -260,12 +271,14 @@ abstract class _InsufficientPermission implements NoteFailure {
   const factory _InsufficientPermission() = _$_InsufficientPermission;
 }
 
+/// @nodoc
 abstract class _$UnableToUpdateCopyWith<$Res> {
   factory _$UnableToUpdateCopyWith(
           _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
       __$UnableToUpdateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnableToUpdateCopyWithImpl<$Res>
     extends _$NoteFailureCopyWithImpl<$Res>
     implements _$UnableToUpdateCopyWith<$Res> {
@@ -277,6 +290,7 @@ class __$UnableToUpdateCopyWithImpl<$Res>
   _UnableToUpdate get _value => super._value as _UnableToUpdate;
 }
 
+/// @nodoc
 class _$_UnableToUpdate implements _UnableToUpdate {
   const _$_UnableToUpdate();
 

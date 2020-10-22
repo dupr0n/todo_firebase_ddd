@@ -4,6 +4,7 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_firebase_ddd/presentation/notes/note_form/widgets/todo_list_widget.dart';
 
 import '../../../application/notes/note_form/note_form_bloc.dart';
 import '../../../domain/notes/note.dart';
@@ -127,12 +128,13 @@ class NoteFormPageScaffold extends StatelessWidget {
           return ChangeNotifierProvider(
             create: (_) => FormTodos(),
             child: Form(
-              autovalidate: state.showErrorMessages,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: SingleChildScrollView(
                 child: Column(
                   children: const [
                     BodyField(),
                     ColorField(),
+                    TodoList(),
                     AddTodoTile(),
                   ],
                 ),
