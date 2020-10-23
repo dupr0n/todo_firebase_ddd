@@ -17,7 +17,7 @@ part 'note_actor_state.dart';
 class NoteActorBloc extends Bloc<NoteActorEvent, NoteActorState> {
   final INoteRepository _noteRepository;
 
-  NoteActorBloc(this._noteRepository) : super(const NoteActorState.initail());
+  NoteActorBloc(this._noteRepository) : super(const NoteActorState.initial());
 
   @override
   Stream<NoteActorState> mapEventToState(

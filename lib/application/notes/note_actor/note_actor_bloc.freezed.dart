@@ -199,8 +199,8 @@ class _$NoteActorStateTearOff {
   const _$NoteActorStateTearOff();
 
 // ignore: unused_element
-  _Initail initail() {
-    return const _Initail();
+  _Initial initial() {
+    return const _Initial();
   }
 
 // ignore: unused_element
@@ -227,14 +227,14 @@ const $NoteActorState = _$NoteActorStateTearOff();
 mixin _$NoteActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initail(),
+    @required Result initial(),
     @required Result actionInProgress(),
     @required Result deleteFailure(NoteFailure noteFailure),
     @required Result deleteSuccess(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initail(),
+    Result initial(),
     Result actionInProgress(),
     Result deleteFailure(NoteFailure noteFailure),
     Result deleteSuccess(),
@@ -242,14 +242,14 @@ mixin _$NoteActorState {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initail(_Initail value),
+    @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
     @required Result deleteFailure(_DeleteFailure value),
     @required Result deleteSuccess(_DeleteSuccess value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initail(_Initail value),
+    Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
     Result deleteFailure(_DeleteFailure value),
     Result deleteSuccess(_DeleteSuccess value),
@@ -272,31 +272,31 @@ class _$NoteActorStateCopyWithImpl<$Res>
   final $Res Function(NoteActorState) _then;
 }
 
-abstract class _$InitailCopyWith<$Res> {
-  factory _$InitailCopyWith(_Initail value, $Res Function(_Initail) then) =
-      __$InitailCopyWithImpl<$Res>;
+abstract class _$InitialCopyWith<$Res> {
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitailCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
-    implements _$InitailCopyWith<$Res> {
-  __$InitailCopyWithImpl(_Initail _value, $Res Function(_Initail) _then)
-      : super(_value, (v) => _then(v as _Initail));
+class __$InitialCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
-  _Initail get _value => super._value as _Initail;
+  _Initial get _value => super._value as _Initial;
 }
 
-class _$_Initail implements _Initail {
-  const _$_Initail();
+class _$_Initial implements _Initial {
+  const _$_Initial();
 
   @override
   String toString() {
-    return 'NoteActorState.initail()';
+    return 'NoteActorState.initial()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initail);
+    return identical(this, other) || (other is _Initial);
   }
 
   @override
@@ -305,30 +305,30 @@ class _$_Initail implements _Initail {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initail(),
+    @required Result initial(),
     @required Result actionInProgress(),
     @required Result deleteFailure(NoteFailure noteFailure),
     @required Result deleteSuccess(),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
-    return initail();
+    return initial();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initail(),
+    Result initial(),
     Result actionInProgress(),
     Result deleteFailure(NoteFailure noteFailure),
     Result deleteSuccess(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initail != null) {
-      return initail();
+    if (initial != null) {
+      return initial();
     }
     return orElse();
   }
@@ -336,37 +336,37 @@ class _$_Initail implements _Initail {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initail(_Initail value),
+    @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
     @required Result deleteFailure(_DeleteFailure value),
     @required Result deleteSuccess(_DeleteSuccess value),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
-    return initail(this);
+    return initial(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initail(_Initail value),
+    Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
     Result deleteFailure(_DeleteFailure value),
     Result deleteSuccess(_DeleteSuccess value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initail != null) {
-      return initail(this);
+    if (initial != null) {
+      return initial(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initail implements NoteActorState {
-  const factory _Initail() = _$_Initail;
+abstract class _Initial implements NoteActorState {
+  const factory _Initial() = _$_Initial;
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
@@ -405,12 +405,12 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initail(),
+    @required Result initial(),
     @required Result actionInProgress(),
     @required Result deleteFailure(NoteFailure noteFailure),
     @required Result deleteSuccess(),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
@@ -420,7 +420,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initail(),
+    Result initial(),
     Result actionInProgress(),
     Result deleteFailure(NoteFailure noteFailure),
     Result deleteSuccess(),
@@ -436,12 +436,12 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initail(_Initail value),
+    @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
     @required Result deleteFailure(_DeleteFailure value),
     @required Result deleteSuccess(_DeleteSuccess value),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
@@ -451,7 +451,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initail(_Initail value),
+    Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
     Result deleteFailure(_DeleteFailure value),
     Result deleteSuccess(_DeleteSuccess value),
@@ -539,12 +539,12 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initail(),
+    @required Result initial(),
     @required Result actionInProgress(),
     @required Result deleteFailure(NoteFailure noteFailure),
     @required Result deleteSuccess(),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
@@ -554,7 +554,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initail(),
+    Result initial(),
     Result actionInProgress(),
     Result deleteFailure(NoteFailure noteFailure),
     Result deleteSuccess(),
@@ -570,12 +570,12 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initail(_Initail value),
+    @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
     @required Result deleteFailure(_DeleteFailure value),
     @required Result deleteSuccess(_DeleteSuccess value),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
@@ -585,7 +585,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initail(_Initail value),
+    Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
     Result deleteFailure(_DeleteFailure value),
     Result deleteSuccess(_DeleteSuccess value),
@@ -642,12 +642,12 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initail(),
+    @required Result initial(),
     @required Result actionInProgress(),
     @required Result deleteFailure(NoteFailure noteFailure),
     @required Result deleteSuccess(),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
@@ -657,7 +657,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initail(),
+    Result initial(),
     Result actionInProgress(),
     Result deleteFailure(NoteFailure noteFailure),
     Result deleteSuccess(),
@@ -673,12 +673,12 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initail(_Initail value),
+    @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
     @required Result deleteFailure(_DeleteFailure value),
     @required Result deleteSuccess(_DeleteSuccess value),
   }) {
-    assert(initail != null);
+    assert(initial != null);
     assert(actionInProgress != null);
     assert(deleteFailure != null);
     assert(deleteSuccess != null);
@@ -688,7 +688,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initail(_Initail value),
+    Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
     Result deleteFailure(_DeleteFailure value),
     Result deleteSuccess(_DeleteSuccess value),
