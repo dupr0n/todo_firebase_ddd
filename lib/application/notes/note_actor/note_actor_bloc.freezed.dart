@@ -53,7 +53,8 @@ mixin _$NoteActorEvent {
 
 /// @nodoc
 abstract class $NoteActorEventCopyWith<$Res> {
-  factory $NoteActorEventCopyWith(NoteActorEvent value, $Res Function(NoteActorEvent) then) =
+  factory $NoteActorEventCopyWith(
+          NoteActorEvent value, $Res Function(NoteActorEvent) then) =
       _$NoteActorEventCopyWithImpl<$Res>;
   $Res call({Note note});
 
@@ -61,7 +62,8 @@ abstract class $NoteActorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NoteActorEventCopyWithImpl<$Res> implements $NoteActorEventCopyWith<$Res> {
+class _$NoteActorEventCopyWithImpl<$Res>
+    implements $NoteActorEventCopyWith<$Res> {
   _$NoteActorEventCopyWithImpl(this._value, this._then);
 
   final NoteActorEvent _value;
@@ -89,7 +91,8 @@ class _$NoteActorEventCopyWithImpl<$Res> implements $NoteActorEventCopyWith<$Res
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res> implements $NoteActorEventCopyWith<$Res> {
+abstract class _$DeletedCopyWith<$Res>
+    implements $NoteActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
       __$DeletedCopyWithImpl<$Res>;
   @override
@@ -139,10 +142,12 @@ class _$_Deleted implements _Deleted {
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(note);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(note);
 
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,12 +270,14 @@ mixin _$NoteActorState {
 
 /// @nodoc
 abstract class $NoteActorStateCopyWith<$Res> {
-  factory $NoteActorStateCopyWith(NoteActorState value, $Res Function(NoteActorState) then) =
+  factory $NoteActorStateCopyWith(
+          NoteActorState value, $Res Function(NoteActorState) then) =
       _$NoteActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoteActorStateCopyWithImpl<$Res> implements $NoteActorStateCopyWith<$Res> {
+class _$NoteActorStateCopyWithImpl<$Res>
+    implements $NoteActorStateCopyWith<$Res> {
   _$NoteActorStateCopyWithImpl(this._value, this._then);
 
   final NoteActorState _value;
@@ -279,24 +286,24 @@ class _$NoteActorStateCopyWithImpl<$Res> implements $NoteActorStateCopyWith<$Res
 }
 
 /// @nodoc
-abstract class _$InitailCopyWith<$Res> {
-  factory _$InitailCopyWith(_Initail value, $Res Function(_Initail) then) =
-      __$InitailCopyWithImpl<$Res>;
+abstract class _$InitialCopyWith<$Res> {
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitailCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
-    implements _$InitailCopyWith<$Res> {
-  __$InitailCopyWithImpl(_Initail _value, $Res Function(_Initail) _then)
-      : super(_value, (v) => _then(v as _Initail));
+class __$InitialCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
 }
 
 /// @nodoc
-class _$_Initail implements _Initail {
-  const _$_Initail();
+class _$_Initial implements _Initial {
+  const _$_Initial();
 
   @override
   String toString() {
@@ -386,9 +393,11 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
       : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -481,7 +490,8 @@ abstract class _ActionInProgress implements NoteActorState {
 
 /// @nodoc
 abstract class _$DeleteFailureCopyWith<$Res> {
-  factory _$DeleteFailureCopyWith(_DeleteFailure value, $Res Function(_DeleteFailure) then) =
+  factory _$DeleteFailureCopyWith(
+          _DeleteFailure value, $Res Function(_DeleteFailure) then) =
       __$DeleteFailureCopyWithImpl<$Res>;
   $Res call({NoteFailure noteFailure});
 
@@ -489,9 +499,11 @@ abstract class _$DeleteFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeleteFailureCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
+class __$DeleteFailureCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res>
     implements _$DeleteFailureCopyWith<$Res> {
-  __$DeleteFailureCopyWithImpl(_DeleteFailure _value, $Res Function(_DeleteFailure) _then)
+  __$DeleteFailureCopyWithImpl(
+      _DeleteFailure _value, $Res Function(_DeleteFailure) _then)
       : super(_value, (v) => _then(v as _DeleteFailure));
 
   @override
@@ -534,11 +546,13 @@ class _$_DeleteFailure implements _DeleteFailure {
     return identical(this, other) ||
         (other is _DeleteFailure &&
             (identical(other.noteFailure, noteFailure) ||
-                const DeepCollectionEquality().equals(other.noteFailure, noteFailure)));
+                const DeepCollectionEquality()
+                    .equals(other.noteFailure, noteFailure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(noteFailure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(noteFailure);
 
   @override
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
@@ -616,14 +630,17 @@ abstract class _DeleteFailure implements NoteActorState {
 
 /// @nodoc
 abstract class _$DeleteSuccessCopyWith<$Res> {
-  factory _$DeleteSuccessCopyWith(_DeleteSuccess value, $Res Function(_DeleteSuccess) then) =
+  factory _$DeleteSuccessCopyWith(
+          _DeleteSuccess value, $Res Function(_DeleteSuccess) then) =
       __$DeleteSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeleteSuccessCopyWithImpl<$Res> extends _$NoteActorStateCopyWithImpl<$Res>
+class __$DeleteSuccessCopyWithImpl<$Res>
+    extends _$NoteActorStateCopyWithImpl<$Res>
     implements _$DeleteSuccessCopyWith<$Res> {
-  __$DeleteSuccessCopyWithImpl(_DeleteSuccess _value, $Res Function(_DeleteSuccess) _then)
+  __$DeleteSuccessCopyWithImpl(
+      _DeleteSuccess _value, $Res Function(_DeleteSuccess) _then)
       : super(_value, (v) => _then(v as _DeleteSuccess));
 
   @override

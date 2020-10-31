@@ -17,12 +17,9 @@ class NotesOverviewPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<NoteWatcherBloc>(
-          create: (context) =>
-              getIt<NoteWatcherBloc>()..add(const NoteWatcherEvent.watchAllStarted()),
-        ),
-        BlocProvider<NoteActorBloc>(
-          create: (context) => getIt<NoteActorBloc>(),
-        ),
+            create: (context) =>
+                getIt<NoteWatcherBloc>()..add(const NoteWatcherEvent.watchAllStarted())),
+        BlocProvider<NoteActorBloc>(create: (context) => getIt<NoteActorBloc>()),
       ],
       child: MultiBlocListener(
         listeners: [
@@ -49,7 +46,7 @@ class NotesOverviewPage extends StatelessWidget {
                 orElse: () {},
               );
             },
-          )
+          ),
         ],
         child: Scaffold(
           appBar: AppBar(

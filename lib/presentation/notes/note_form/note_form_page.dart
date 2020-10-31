@@ -4,7 +4,6 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_firebase_ddd/presentation/notes/note_form/widgets/todo_list_widget.dart';
 
 import '../../../application/notes/note_form/note_form_bloc.dart';
 import '../../../domain/notes/note.dart';
@@ -14,6 +13,7 @@ import 'misc/todo_item_presentation_classes.dart';
 import 'widgets/add_todo_tile_widget.dart';
 import 'widgets/body_field_widget.dart';
 import 'widgets/color_field_widget.dart';
+import 'widgets/todo_list_widget.dart';
 
 class NoteFormPage extends StatelessWidget {
   final Note editedNote;
@@ -119,7 +119,7 @@ class NoteFormPageScaffold extends StatelessWidget {
             onPressed: () {
               context.bloc<NoteFormBloc>().add(const NoteFormEvent.saved());
             },
-          )
+          ),
         ],
       ),
       body: BlocBuilder<NoteFormBloc, NoteFormState>(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:provider/provider.dart';
 
@@ -34,12 +35,35 @@ class TodoList extends StatelessWidget {
       },
       child: Consumer<FormTodos>(
         builder: (context, formTodos, _) {
-          return ListView.builder(
+          return ImplicitlyAnimatedReorderableList<TodoItemPrimitive>(
             shrinkWrap: true,
-            itemCount: formTodos.value.size,
-            itemBuilder: (context, index) => TodoTile(
-              index: index,
-              key: ValueKey(context.formTodos[index].id),
+            items: formTodos.value.asList(),
+            areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
+            onReorderFinished: (_, __, ___, newItems) {
+              context.formTodos = newItems.toImmutableList();
+              context.bloc<NoteFormBloc>().add(NoteFormEvent.todosChanged(context.formTodos));
+            },
+            itemBuilder: (context, itemAnimation, item, index) => Reorderable(
+              key: ValueKey(item.id),
+              builder: (context, animation, inDrag) => ScaleTransition(
+                //& Can alter the progression of an animation, even changing the type.
+                scale: Tween<double>(begin: 1, end: 0.95).animate(animation),
+                child: TodoTile(
+                  index: index,
+                  elevation: animation.value * 4,
+                ),
+              ),
+            ),
+            removeDuration: const Duration(milliseconds: 400),
+            removeItemBuilder: (context, animation, item) => Reorderable(
+              key: ValueKey(item.id),
+              child: FadeTransition(
+                opacity: animation,
+                child: TodoTile(
+                  index: 0,
+                  elevation: animation.value * 4,
+                ),
+              ),
             ),
           );
         },
@@ -49,8 +73,12 @@ class TodoList extends StatelessWidget {
 }
 
 class TodoTile extends HookWidget {
-  const TodoTile({@required this.index, Key key}) : super(key: key);
   final int index;
+  final double elevation;
+
+  const TodoTile({@required this.index, double elevation, Key key})
+      : elevation = elevation ?? 0,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,48 +98,58 @@ class TodoTile extends HookWidget {
           },
         )
       ],
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+        child: Material(
+          elevation: elevation,
+          animationDuration: const Duration(milliseconds: 50),
           borderRadius: BorderRadius.circular(8),
-        ),
-        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-        child: CheckboxListTile(
-          value: todo.done,
-          title: TextFormField(
-            controller: textEditingController,
-            decoration: const InputDecoration(
-              hintText: 'Todo',
-              counterText: '',
-              border: InputBorder.none,
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(8),
             ),
-            maxLength: TodoName.maxLength,
-            onChanged: (value) {
-              context.formTodos = context.formTodos.map(
-                (listTodo) => listTodo == todo ? todo.copyWith(name: value) : listTodo,
-              );
-              context.bloc<NoteFormBloc>().add(NoteFormEvent.todosChanged(context.formTodos));
-            },
-            validator: (_) {
-              return context.bloc<NoteFormBloc>().state.note.todos.value.fold(
-                    (_) => null,
-                    (todoList) => todoList[index].name.value.fold(
-                          (f) => f.maybeMap(
-                              empty: (_) => 'Cannot be empty',
-                              exceedingLength: (_) => 'Too long',
-                              multiline: (_) => 'Has to be single line',
-                              orElse: () => 'Ya goofed big time'),
-                          (_) => null,
-                        ),
+            child: ListTile(
+              leading: Checkbox(
+                value: todo.done,
+                onChanged: (value) {
+                  context.formTodos = context.formTodos.map(
+                    (listTodo) => listTodo == todo ? todo.copyWith(done: value) : listTodo,
                   );
-            },
+                  context.bloc<NoteFormBloc>().add(NoteFormEvent.todosChanged(context.formTodos));
+                },
+              ),
+              title: TextFormField(
+                controller: textEditingController,
+                decoration: const InputDecoration(
+                  hintText: 'Todo',
+                  counterText: '',
+                  border: InputBorder.none,
+                ),
+                maxLength: TodoName.maxLength,
+                onChanged: (value) {
+                  context.formTodos = context.formTodos.map(
+                    (listTodo) => listTodo == todo ? todo.copyWith(name: value) : listTodo,
+                  );
+                  context.bloc<NoteFormBloc>().add(NoteFormEvent.todosChanged(context.formTodos));
+                },
+                validator: (_) {
+                  return context.bloc<NoteFormBloc>().state.note.todos.value.fold(
+                        (_) => null,
+                        (todoList) => todoList[index].name.value.fold(
+                              (f) => f.maybeMap(
+                                  empty: (_) => 'Cannot be empty',
+                                  exceedingLength: (_) => 'Too long',
+                                  multiline: (_) => 'Has to be single line',
+                                  orElse: () => 'Ya goofed big time'),
+                              (_) => null,
+                            ),
+                      );
+                },
+              ),
+              trailing: const Handle(child: Icon(Icons.list)),
+            ),
           ),
-          onChanged: (value) {
-            context.formTodos = context.formTodos.map(
-              (listTodo) => listTodo == todo ? todo.copyWith(done: value) : listTodo,
-            );
-            context.bloc<NoteFormBloc>().add(NoteFormEvent.todosChanged(context.formTodos));
-          },
         ),
       ),
     );
